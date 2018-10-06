@@ -41,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="22210" />
+          <entry key="java" value="22376" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="22210" />
+          <entry key="JAVA" value="22376" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -57,14 +57,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/hello/MyIOUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+            <state relative-caret-position="441">
+              <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#630#647#0" expanded="true" />
                 <element signature="e#1053#1058#0" expanded="true" />
-                <element signature="e#2550#2607#0" expanded="true" />
-                <element signature="e#2890#2934#0" expanded="true" />
+                <element signature="e#3024#3068#0" expanded="true" />
                 <element signature="e#3059#3116#0" expanded="true" />
                 <element signature="e#4098#4134#0" expanded="true" />
                 <element signature="e#4644#4674#0" expanded="true" />
@@ -666,20 +665,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538834796749</updated>
-      <workItem from="1538834802564" duration="25382000" />
+      <workItem from="1538834802564" duration="26276000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 12m 25s.xml">
-      <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 13m 18s.xml">
-      <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 14m 43s.xml">
-      <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 15m 04s.xml">
       <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
     </history-entry>
@@ -701,13 +691,21 @@
     <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 18m 56s.xml">
       <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 23m 57s.xml">
+      <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 24m 25s.xml">
+      <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyIOUnitTest_testSingleInput - 2018.10.07 at 04h 24m 50s.xml">
+      <configuration name="MyIOUnitTest.testSingleInput" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25382000" />
+    <option name="totallyTimeSpent" value="26276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
@@ -716,12 +714,12 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" weight="0.3275488" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32968238" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.32968238" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3264642" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3264642" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -814,14 +812,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/hello/MyIOUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+        <state relative-caret-position="441">
+          <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#630#647#0" expanded="true" />
             <element signature="e#1053#1058#0" expanded="true" />
-            <element signature="e#2550#2607#0" expanded="true" />
-            <element signature="e#2890#2934#0" expanded="true" />
+            <element signature="e#3024#3068#0" expanded="true" />
             <element signature="e#3059#3116#0" expanded="true" />
             <element signature="e#4098#4134#0" expanded="true" />
             <element signature="e#4644#4674#0" expanded="true" />
