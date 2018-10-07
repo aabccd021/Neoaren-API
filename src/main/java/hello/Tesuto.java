@@ -1,5 +1,6 @@
 package hello;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.mdkt.compiler.InMemoryJavaCompiler;
 
@@ -19,38 +20,42 @@ public class Tesuto {
 
     public static JSONObject nani(String code) {
 
-        JSONObject ret = new JSONObject();
-        Boolean isCompileError = false;
-        ret.put("isCompileError", isCompileError);
-        ArrayList<JSONObject> cases = new ArrayList<JSONObject>();
-        ret.put("cases", cases);
-
         try {
-            InMemoryJavaCompiler ahelloClass = InMemoryJavaCompiler.newInstance();
-            ahelloClass.ignoreWarnings();
-            Class<?> helloClass = ahelloClass.compile("SDA18191T", code.toString());
-        } catch (Exception e) {
-            isCompileError = true;
+            JSONObject ret = new JSONObject();
+            Boolean isCompileError = false;
             ret.put("isCompileError", isCompileError);
-            ret.put("compileErrorMessage", e);
-            return ret;
-        }
+            ArrayList<JSONObject> cases = new ArrayList<JSONObject>();
+            ret.put("cases", cases);
 
-        String[][] cas = new String[][]{
-                {"5 3 1\n1 2 3\nA", "2"},
-                {"12 3 1\n1 3 4\nB", "3\n1 4 4"},
-                {"6 4 2\n1 2 3 4\nB", "1\n4"},
-                {"6 1 3\n4\nA", "0"},
-                {"6 1 3\n4\nB", "NA"},
-        };
+            try {
+                InMemoryJavaCompiler ahelloClass = InMemoryJavaCompiler.newInstance();
+                ahelloClass.ignoreWarnings();
+                Class<?> helloClass = ahelloClass.compile("SDA18191T", code.toString());
+            } catch (Exception e) {
+                isCompileError = true;
+                ret.put("isCompileError", isCompileError);
+                ret.put("compileErrorMessage", e);
+                return ret;
+            }
 
-        int index = 0;
-        for (String ca[] : cas) {
-            Testah testah = new Testah(ca[0], ca[1], code);
-            cases.add(testah.DoTest());
-            index++;
+            String[][] cas = new String[][]{
+                    {"5 3 1\n1 2 3\nA", "2"},
+                    {"12 3 1\n1 3 4\nB", "3\n1 4 4"},
+                    {"6 4 2\n1 2 3 4\nB", "1\n4"},
+                    {"6 1 3\n4\nA", "0"},
+                    {"6 1 3\n4\nB", "NA"},
+            };
+
+            int index = 0;
+            for (String ca[] : cas) {
+                Testah testah = new Testah(ca[0], ca[1], code);
+                cases.add(testah.DoTest());
+                index++;
+            }
+            ret.put("cases", cases);
+        } catch (JSONException e){
+            e.printStackTrace();
         }
-        ret.put("cases", cases);
         return ret;
     }
 }
