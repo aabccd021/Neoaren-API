@@ -1,5 +1,6 @@
 package hello;
 
+import org.json.JSONObject;
 import org.mdkt.compiler.InMemoryJavaCompiler;
 
 import java.io.*;
@@ -34,7 +35,9 @@ public class Testah {
         }
     }
 
-    public String DoTest() {
+    public JSONObject DoTest() {
+
+        JSONObject ret = new JSONObject();
 
         ByteArrayInputStream in = new ByteArrayInputStream(problem.getBytes());
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -43,7 +46,8 @@ public class Testah {
         final Object[] args = new Object[1];
         args[0] = new String[0];
 
-//        "==="
+
+        //==================
         System.setIn(in);
         System.setOut(new PrintStream(outContent));
         try {
@@ -71,6 +75,7 @@ public class Testah {
         retStr += "\nexpected: " + expected;
         retStr += "\nyour Answer: " + answer;
 
-        return retStr;
+        ret.put("rrr", retStr);
+        return ret;
     }
 }
