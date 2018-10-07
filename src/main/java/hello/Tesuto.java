@@ -1,6 +1,6 @@
 package hello;
 
-import java.io.IOException;
+import org.mdkt.compiler.InMemoryJavaCompiler;
 
 public class Tesuto {
     public static void main(String[] args) {
@@ -14,17 +14,16 @@ public class Tesuto {
         nani(sourceCode.toString());
     }
 
-    public static String nani(String code){
+    public static String nani(String code) {
 
-//        StringBuilder sourceCode = new StringBuilder();
-//        sourceCode.append("public class SDA18191T {\n");
-//        sourceCode.append("public static int a = 1;\n");
-//        sourceCode.append("   public static void main(String[] args) { System.out.println(a);a++;}");
-//        sourceCode.append("}");
-//        System.out.println(sourceCode.toString());
-        System.out.println("===");
-        System.out.println(code);
-//        code = sourceCode.toString();
+        try {
+            InMemoryJavaCompiler ahelloClass = InMemoryJavaCompiler.newInstance();
+            ahelloClass.ignoreWarnings();
+            Class<?> helloClass = ahelloClass.compile("SDA18191T", code.toString());
+        } catch (Exception e) {
+            String retStr = "KOMPAIL EROR\n" + e.toString();
+            return retStr;
+        }
 
         String hasil = "";
 
