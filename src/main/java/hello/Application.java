@@ -36,7 +36,7 @@ public class Application {
 //        System.out.println(request.get("code"));
         String code = (String) request.get("code");
         String response = "nuru";
-        System.out.println("hello");
+        System.out.println(code);
 //        try {
             response = Tesuto.nani(code);
 //        } catch (IOException e) {
