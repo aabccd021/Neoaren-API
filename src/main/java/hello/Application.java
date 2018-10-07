@@ -1,5 +1,6 @@
 package hello;
 
+import org.json.JSONObject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.IOException;
 import java.util.Map;
 
 @Controller
@@ -30,27 +30,9 @@ public class Application {
     @RequestMapping(path = "/omae", method = RequestMethod.POST)
     @ResponseBody
     String testGetRequest(@RequestBody Map<String, Object> request) {
-//        for (Object req : request.values()) {
-//            System.out.println("REQUEST : " + req.toString());
-//        }
-//        System.out.println(request.get("code"));
-        System.out.println("===AAA");
         String code = (String) request.get("code");
-
-        String response = "nuru";
-//        System.out.println("===BBB");
-//        System.out.println(code);
-        System.out.println("===CCC");
-        System.out.println(request.keySet());
-//        try {
-            response = Tesuto.nani(code);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        System.out.println("===DDD");
-        System.out.println(response);
-        return response;
-//        return "yeah";
+        JSONObject response = Tesuto.nani(code);
+        return response.toString();
     }
 }
 

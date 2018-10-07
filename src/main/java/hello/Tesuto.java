@@ -1,5 +1,6 @@
 package hello;
 
+import org.json.JSONObject;
 import org.mdkt.compiler.InMemoryJavaCompiler;
 
 public class Tesuto {
@@ -14,18 +15,23 @@ public class Tesuto {
         nani(sourceCode.toString());
     }
 
-    public static String nani(String code) {
+    public static JSONObject nani(String code) {
+
+        JSONObject ret = new JSONObject();
+        Boolean isCompileError = false;
+        ret.put("isCompileError", isCompileError);
+        JSONObject cases = new JSONObject();
+        ret.put("cases", cases);
 
         try {
             InMemoryJavaCompiler ahelloClass = InMemoryJavaCompiler.newInstance();
             ahelloClass.ignoreWarnings();
             Class<?> helloClass = ahelloClass.compile("SDA18191T", code.toString());
         } catch (Exception e) {
-            String retStr = "KOMPAIL EROR\n" + e.toString();
-            return retStr;
+            isCompileError = true;
+            ret.put("isCompileError", isCompileError);
+            return ret;
         }
-
-        String hasil = "";
 
         String[][] cas = new String[][]{
                 {"5 3 1\n1 2 3\nA", "2"},
@@ -35,12 +41,12 @@ public class Tesuto {
                 {"6 1 3\n4\nB", "NA"},
         };
 
+        int index = 0;
         for (String ca[] : cas) {
-//            System.out.println(ca[0]);
             Testah testah = new Testah(ca[0], ca[1], code);
-            hasil += testah.DoTest();
-//            System.out.println(hasil);
+            cases.put("case" + index, testah.DoTest());
+            index++;
         }
-        return hasil;
+        return ret;
     }
 }

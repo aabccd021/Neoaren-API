@@ -24,29 +24,28 @@ public class Testah {
         this.code = code;
 
 
+        //don delet dis
         try {
             InMemoryJavaCompiler ahelloClass = InMemoryJavaCompiler.newInstance();
             ahelloClass.ignoreWarnings();
-//                    helloClass = InMemoryJavaCompiler.newInstance().compile("SDA18191T", code.toString());
             helloClass = ahelloClass.compile("SDA18191T", code.toString());
-            System.out.println("HHHHH");
         } catch (Exception e) {
-            error = true;
             retStr = "KOMPAIL EROR\n" + e.toString();
         }
     }
 
     public String DoTest() {
-        System.out.println("LLLL");
 
         ByteArrayInputStream in = new ByteArrayInputStream(problem.getBytes());
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setIn(in);
-        System.setOut(new PrintStream(outContent));
         String answer = "def";
 
         final Object[] args = new Object[1];
         args[0] = new String[0];
+
+//        "==="
+        System.setIn(in);
+        System.setOut(new PrintStream(outContent));
         try {
             helloClass.getMethod("main", String[].class).invoke(null, args);
         } catch (IllegalAccessException e) {
@@ -56,6 +55,9 @@ public class Testah {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
+        System.setIn(stdin);
+        System.setOut((PrintStream) stdout);
+        //==================
 
         answer = outContent.toString().trim().replaceAll(String.valueOf((char) 0x0D), "");
 
@@ -68,8 +70,6 @@ public class Testah {
         retStr += "\nproblem:\n" + problem;
         retStr += "\nexpected: " + expected;
         retStr += "\nyour Answer: " + answer;
-        System.setIn(stdin);
-        System.setOut((PrintStream) stdout);
 
         return retStr;
     }
