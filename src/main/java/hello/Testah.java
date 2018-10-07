@@ -59,7 +59,7 @@ public class Testah {
 
         answer = outContent.toString().trim().replaceAll(String.valueOf((char) 0x0D), "");
 
-        if ((answer.replaceAll(String.valueOf((char) 0x0D), "")).equals(expected)) {
+        if ((expected.replaceAll(String.valueOf((char) 0x0D), "")).equals(answer)) {
             retStr += "\nSuccess";
         } else {
             retStr += "\nFail";
