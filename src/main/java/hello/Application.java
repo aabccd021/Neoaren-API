@@ -29,13 +29,14 @@ public class Application {
 
     @RequestMapping(path = "/omae", method = RequestMethod.POST)
     @ResponseBody
-    public String testGetRequest(@RequestBody Map<String, Object> request) {
+    String testGetRequest(@RequestBody Map<String, Object> request) {
 //        for (Object req : request.values()) {
 //            System.out.println("REQUEST : " + req.toString());
 //        }
 //        System.out.println(request.get("code"));
         String code = (String) request.get("code");
-        String response = null;
+        String response = "nuru";
+        System.out.println("hello");
 //        try {
             response = Tesuto.nani(code);
 //        } catch (IOException e) {
