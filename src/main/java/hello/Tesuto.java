@@ -20,8 +20,8 @@ public class Tesuto {
 
     public static JSONObject nani(String code) {
 
+        JSONObject ret = new JSONObject();
         try {
-            JSONObject ret = new JSONObject();
             Boolean isCompileError = false;
             ret.put("isCompileError", isCompileError);
             ArrayList<JSONObject> cases = new ArrayList<JSONObject>();
