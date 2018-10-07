@@ -35,13 +35,16 @@ public class Application {
 //        }
 //        System.out.println(request.get("code"));
         String code = (String) request.get("code");
+
         String response = "nuru";
         System.out.println(code);
+        System.out.println(request.keySet());
 //        try {
             response = Tesuto.nani(code);
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+        System.out.println(response);
         return response;
 //        return "yeah";
     }
