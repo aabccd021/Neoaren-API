@@ -34,16 +34,20 @@ public class Application {
 //            System.out.println("REQUEST : " + req.toString());
 //        }
 //        System.out.println(request.get("code"));
+        System.out.println("===AAA");
         String code = (String) request.get("code");
 
         String response = "nuru";
-        System.out.println(code);
+//        System.out.println("===BBB");
+//        System.out.println(code);
+        System.out.println("===CCC");
         System.out.println(request.keySet());
 //        try {
             response = Tesuto.nani(code);
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+        System.out.println("===DDD");
         System.out.println(response);
         return response;
 //        return "yeah";

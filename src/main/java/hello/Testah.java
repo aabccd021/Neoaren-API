@@ -25,7 +25,11 @@ public class Testah {
 
 
         try {
-            helloClass = InMemoryJavaCompiler.newInstance().compile("HelloClass", code.toString());
+            InMemoryJavaCompiler ahelloClass = InMemoryJavaCompiler.newInstance();
+            ahelloClass.ignoreWarnings();
+//                    helloClass = InMemoryJavaCompiler.newInstance().compile("SDA18191T", code.toString());
+            helloClass = ahelloClass.compile("SDA18191T", code.toString());
+            System.out.println("HHHHH");
         } catch (Exception e) {
             error = true;
             retStr = "KOMPAIL EROR\n" + e.toString();
@@ -33,9 +37,7 @@ public class Testah {
     }
 
     public String DoTest() {
-        if(error){
-            return retStr;
-        }
+        System.out.println("LLLL");
 
         ByteArrayInputStream in = new ByteArrayInputStream(problem.getBytes());
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -45,7 +47,6 @@ public class Testah {
 
         final Object[] args = new Object[1];
         args[0] = new String[0];
-
         try {
             helloClass.getMethod("main", String[].class).invoke(null, args);
         } catch (IllegalAccessException e) {
@@ -58,8 +59,7 @@ public class Testah {
 
         answer = outContent.toString().trim().replaceAll(String.valueOf((char) 0x0D), "");
 
-
-        if ((answer.replaceAll(String.valueOf((char) 0x0D), "")).equals(answer)) {
+        if ((answer.replaceAll(String.valueOf((char) 0x0D), "")).equals(expected)) {
             retStr += "\nSuccess";
         } else {
             retStr += "\nFail";
