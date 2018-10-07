@@ -3,6 +3,8 @@ package hello;
 import org.json.JSONObject;
 import org.mdkt.compiler.InMemoryJavaCompiler;
 
+import java.util.ArrayList;
+
 public class Tesuto {
     public static void main(String[] args) {
 
@@ -20,7 +22,7 @@ public class Tesuto {
         JSONObject ret = new JSONObject();
         Boolean isCompileError = false;
         ret.put("isCompileError", isCompileError);
-        JSONObject cases = new JSONObject();
+        ArrayList<JSONObject> cases = new ArrayList<JSONObject>();
         ret.put("cases", cases);
 
         try {
@@ -30,6 +32,7 @@ public class Tesuto {
         } catch (Exception e) {
             isCompileError = true;
             ret.put("isCompileError", isCompileError);
+            ret.put("compileErrorMessage", e);
             return ret;
         }
 
@@ -44,9 +47,10 @@ public class Tesuto {
         int index = 0;
         for (String ca[] : cas) {
             Testah testah = new Testah(ca[0], ca[1], code);
-            cases.put("case" + index, testah.DoTest());
+            cases.add(testah.DoTest());
             index++;
         }
+        ret.put("cases", cases);
         return ret;
     }
 }
